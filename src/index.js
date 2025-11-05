@@ -2,19 +2,11 @@ import "./styles.css";
 const dropdownMenuElement = document.getElementsByClassName("menu");
 
 function showDropdownMenu(e) {
-    for(const child of e.target.children) {
-        if(child.className == "option") {
-            child.style.display = "block";
-        }
-    }
+    e.currentTarget.getElementsByClassName("dropdown-content")[0].classList.add("show");
 }
 
 function hideDropdownMenu(e) {
-    for(const child of e.target.children) {
-        if(child.className == "option") {
-            child.style.display = "none";
-        }
-    }
+    e.currentTarget.getElementsByClassName("dropdown-content")[0].classList.remove("show");
 }
 
 for(const elem of dropdownMenuElement) {
